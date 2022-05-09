@@ -1,8 +1,8 @@
 package io.arex.inst.jedis.v4;
 
 import com.google.auto.service.AutoService;
-import io.arex.foundation.api.ModuleInstrumentation;
-import io.arex.foundation.api.TypeInstrumentation;
+import io.arex.api.instrumentation.ModuleInstrumentation;
+import io.arex.api.instrumentation.TypeInstrumentation;
 
 import java.util.List;
 

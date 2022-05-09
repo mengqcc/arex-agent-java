@@ -1,5 +1,6 @@
 package io.arex.foundation.services;
 
+import com.google.auto.service.AutoService;
 import io.arex.foundation.config.ConfigManager;
 import io.arex.foundation.serializer.SerializeUtils;
 import io.arex.foundation.util.AsyncHttpClientUtil;
@@ -15,15 +16,11 @@ import org.slf4j.LoggerFactory;
  *
  * @date 2022/03/16
  */
-public class ConfigService {
-    public static final ConfigService INSTANCE = new ConfigService();
+@AutoService(io.arex.api.config.ConfigService.class)
+public class ConfigService implements io.arex.api.config.ConfigService {
     private static final Logger LOGGER = LoggerFactory.getLogger(ConfigService.class);
     private static final String CONFIG_LOAD_URL =
             String.format("http://%s/api/config/agent/load", ConfigManager.INSTANCE.getConfigServiceHost());
-
-    private ConfigService() {
-
-    }
 
     public void loadAgentConfig(String agentArgs) {
         try {
@@ -53,6 +50,16 @@ public class ConfigService {
         } catch (Throwable e) {
             LOGGER.warn("loadAgentConfig error", e);
         }
+    }
+
+    @Override
+    public void initial(String agentArgs) {
+        loadAgentConfig(agentArgs);
+    }
+
+    @Override
+    public String getMode() {
+        return "default";
     }
 
     public static class ConfigQueryResponse {

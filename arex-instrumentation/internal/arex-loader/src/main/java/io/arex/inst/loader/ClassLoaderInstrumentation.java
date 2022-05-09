@@ -1,8 +1,8 @@
 package io.arex.inst.loader;
 
 import io.arex.agent.bootstrap.DecorateOnlyOnce;
-import io.arex.foundation.api.MethodInstrumentation;
-import io.arex.foundation.api.TypeInstrumentation;
+import io.arex.api.instrumentation.MethodInstrumentation;
+import io.arex.api.instrumentation.TypeInstrumentation;
 import net.bytebuddy.asm.Advice;
 import net.bytebuddy.description.type.TypeDescription;
 import net.bytebuddy.matcher.ElementMatcher;

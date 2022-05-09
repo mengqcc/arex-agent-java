@@ -29,7 +29,7 @@ Arex utilizes the advanced Java technique, Instrument API, and is capable of ins
 
 ## Installation
 
-Simply download the latest binary from [github]( https://github.com/arextest/releases) or compile it by yourself.\
+Simply download the latest binary from [github](https://github.com/arextest/arex-agent-java/releases) or compile it by yourself.\
 There are two agent files provided in the `arex-agent-jar` folder like below. They must be placed in the same directory.
 
 ```
@@ -57,7 +57,7 @@ By default, Arex uses [H2](https://www.h2database.com) as a local storage to sav
 Simply click the [script]("http://www.google.com") in the `arex-agent-java/bin` directory to start the command line tool, or run it by following `java` command
 
  ```
-java -cp "/path/to/arex-cli-parent/arex-cli/target/arex-cli.jar" io.arex.cli.ArexCli
+java -cp "/path/to/arex-cli-parent/arex-cli/target/arex-cli.jar" ArexCli
  ```
 The supported commands are as follows:
 - **replay**- replay recorded data and view differences  
@@ -66,6 +66,8 @@ The supported commands are as follows:
   `[option: -r/--replayId]` replay id, multiple are separated by spaces  
 - **debug**- local debugging of specific cases  
   `[option: -r/--recordId]` record id, required Option  
+
+***Run with entire AREX solution, refer to [arex-dev-ops](https://github.com/arextest/dev-ops/wiki):***
 
 AREX agent works along with the [AREX config service](https://github.com/arextest/arex-config) and the [AREX storage service](https://github.com/arextest/arex-storage).
 You could just configure the host and port of them respectively, like below

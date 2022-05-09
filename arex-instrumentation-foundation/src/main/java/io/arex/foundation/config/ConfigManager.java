@@ -182,10 +182,6 @@ public class ConfigManager {
         return storageServicePassword;
     }
 
-    public boolean isLocalStorage(){
-        return STORAGE_MODE.equalsIgnoreCase(storageServiceMode);
-    }
-
     public void setStorageServiceMode(String storageServiceMode) {
         this.storageServiceMode = storageServiceMode;
     }
